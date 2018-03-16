@@ -91,7 +91,7 @@ object Settings {
   def sharedSettings(moduleName: Option[String] = None): Seq[Def.Setting[_]] = Seq(
     scalaVersion := scalaV
     , name := s"\$projectName\${moduleName.map("-" + _).getOrElse("")}"
-    , description := "$description$"
+    , description := "$project_description$"
     , version := s"\$buildVersion-\$buildNumber"
     , resolvers += "jitpack" at "https://jitpack.io"
     , publishArtifact in(Compile, packageDoc) := false
