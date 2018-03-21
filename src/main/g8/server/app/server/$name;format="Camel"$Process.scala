@@ -13,19 +13,21 @@ import pme123.adapters.shared._
 import scala.concurrent.{ExecutionContext, Future}
 import scala.util.Random
 
-trait $name;format="Camel"$Process extends JobProcess {
+class $name;format="Camel"$Process @Inject()()
+                                            (implicit val mat: Materializer, val ec: ExecutionContext)
+  extends JobProcess {
 
-  def jobLabel: String
+  val jobLabel = "$name;format="Camel"$ Job"
 
-  def createInfo(): ProjectInfo = // same version as the adapters!
-    createInfo(pme123.adapters.version.BuildInfo.version)
+  def createInfo(): ProjectInfo = // check createInfo for adding more infos!
+    createInfo(version.BuildInfo.version)
 
   // the process fakes some long taking tasks that logs its progress
   def runJob(user: String)
             (implicit logService: LogService
              , jobActor: ActorRef): Future[LogService] = {
     Future {
-      logService.startLogging()
+      logService.startLogging() // init the logging
       val results =
         for {
           i <- 2 to 3
@@ -50,9 +52,5 @@ trait $name;format="Camel"$Process extends JobProcess {
   }
 }
 
-class $name;format="Camel"$JobProcess @Inject()()(implicit val mat: Materializer, val ec: ExecutionContext)
-  extends $name;format="Camel"$Process {
-  override def jobLabel: String = "$name;format="Camel"$ Job"
-}
 
 
