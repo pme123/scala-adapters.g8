@@ -13,7 +13,7 @@ import pme123.adapters.shared.JobConfig.JobIdent
 import scala.concurrent.ExecutionContext
 
 @Singleton
-class $name;format="Camel"$JobCreation @Inject()($name;format="camel"$Job: $name;format="Camel"$JobProcess
+class $name;format="Camel"$JobCreation @Inject()($name;format="camel"$Job: $name;format="Camel"$Process
                                    , @Named("actorSchedulers") val actorSchedulers: ActorRef
                                    , actorSystem: ActorSystem
                                   )(implicit val mat: Materializer
