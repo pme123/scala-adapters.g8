@@ -26,7 +26,7 @@ class $name;format="Camel"$JobCreation @Inject()($name;format="camel"$Job: $name
     actorSystem.actorOf(JobActor.props(jobConfigs($name;format="camel"$JobIdent), $name;format="camel"$Job), $name;format="camel"$JobIdent)
 
   def createJobActor(jobConfig: JobConfig): ActorRef = jobConfig.jobIdent match {
-    case "$name;format="camel"$Job" => $name;format="camel"$JobRef
+    case x if x == $name;format="camel"$JobIdent => $name;format="camel"$JobRef
     case other => throw ServiceException(s"There is no Job for \$other")
   }
 
