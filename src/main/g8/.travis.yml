@@ -1,6 +1,6 @@
 language: scala
 script:
-  - sbt ++\$TRAVIS_SCALA_VERSION clean sharedJVM/test sharedJS/test server/test 'set scalaJSStage in Global := FullOptStage'
+  - sbt ++\$TRAVIS_SCALA_VERSION clean test
 scala:
    - $scala_version$
 jdk:
