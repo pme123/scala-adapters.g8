@@ -6,5 +6,5 @@ jdk:
   - oraclejdk8
 
 script:
-  - sbt test
+  - sbt ++$TRAVIS_SCALA_VERSION clean sharedJVM/test sharedJS/test server/test
 
