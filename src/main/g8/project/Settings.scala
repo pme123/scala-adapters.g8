@@ -20,7 +20,7 @@ object Settings {
 
   // main versions
   lazy val scalaV = "$scala_version$"
-  lazy val adaptersV = "1.1.4"
+  lazy val adaptersV = "1.3.9"
 
   lazy val scalaTestV = "3.0.4"
 
