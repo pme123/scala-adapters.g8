@@ -21,9 +21,8 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-gzip" % "1.0.2")
 addSbtPlugin("com.typesafe.sbt" % "sbt-digest" % "1.1.3")
 
 // see https://github.com/portable-scala/sbt-crossproject
-addSbtPlugin("org.scala-js"     % "sbt-scalajs"              % "0.6.21")
-addSbtPlugin("org.scala-native" % "sbt-crossproject"         % "0.2.2")  // (1)
-addSbtPlugin("org.scala-native" % "sbt-scalajs-crossproject" % "0.2.2")  // (2)
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "$scalajs_version$")
+addSbtPlugin("org.portable-scala" % "sbt-scalajs-crossproject" % "0.4.0")
 
 // version infos
 addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.7.0")
