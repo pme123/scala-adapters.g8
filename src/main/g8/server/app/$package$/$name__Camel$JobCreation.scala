@@ -1,4 +1,4 @@
-package server
+package $package$
 
 import javax.inject.{Inject, Named, Singleton}
 

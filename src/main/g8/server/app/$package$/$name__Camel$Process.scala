@@ -1,12 +1,12 @@
-package server
+package $package$
 
 import java.time.LocalDateTime
 import javax.inject.Inject
 
 import akka.actor.ActorRef
 import akka.stream.Materializer
-import pme123.adapters.server.control.demo.DemoService.toISODateTimeString
 import pme123.adapters.server.control.{JobProcess, LogService}
+import pme123.adapters.server.entity.ISODateTimeHelper._
 import pme123.adapters.shared.LogLevel.{DEBUG, ERROR, INFO, WARN}
 import pme123.adapters.shared._
 
@@ -20,7 +20,9 @@ class $name;format="Camel"$Process @Inject()()
   val jobLabel = "$name;format="Camel"$ Job"
 
   def createInfo(): ProjectInfo = // check createInfo for adding more infos!
-    createInfo(version.BuildInfo.version)
+    createInfo(version.BuildInfo.version
+  , AdaptersContextProps($name;format="Camel"$Settings.configPath, $name;format="Camel"$Context.props)
+  )
 
   // the process fakes some long taking tasks that logs its progress
   def runJob(user: String)

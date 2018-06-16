@@ -4,6 +4,8 @@ import com.typesafe.sbt.web.Import.Assets
 import com.typesafe.sbt.web.SbtWeb.autoImport.pipelineStages
 import org.scalajs.sbtplugin.ScalaJSPlugin.AutoImport.jsDependencies
 import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
+import org.portablescala.sbtplatformdeps.PlatformDepsPlugin.autoImport._
+
 import org.scalajs.sbtplugin.Stage
 import play.sbt.PlayImport.{filters, guice, ws}
 import sbt.Keys.{resolvers, _}
@@ -16,11 +18,11 @@ object Settings {
   lazy val orgId = "$github_id$"
   lazy val orgHomepage = Some(new URL("$developer_url$"))
   lazy val projectName = "$github_name$"
-  lazy val projectV = "0.0.1"
+  lazy val projectV = "0.1.0"
 
   // main versions
   lazy val scalaV = "$scala_version$"
-  lazy val adaptersV = "1.3.9"
+  lazy val adaptersV = "1.4.4"
 
   lazy val scalaTestV = "3.0.4"
 

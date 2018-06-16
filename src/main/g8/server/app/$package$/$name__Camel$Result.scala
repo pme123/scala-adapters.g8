@@ -1,4 +1,4 @@
-package server
+package $package$
 
 import pme123.adapters.shared.DateTimeString
 
